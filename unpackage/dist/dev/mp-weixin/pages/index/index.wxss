@@ -1,0 +1,54 @@
+.index-container .header {
+  display: flex;
+  padding: 10rpx 0;
+}
+.index-container .header .logo {
+  width: 140rpx;
+  height: 40rpx;
+  margin: 10rpx 20rpx;
+}
+.index-container .header .search {
+  position: relative;
+  width: 420rpx;
+  height: 60rpx;
+  background: #eee;
+}
+.index-container .header .search .iconfont {
+  position: absolute;
+  font-size: 30rpx;
+  top: 15rpx;
+  left: 10rpx;
+}
+.index-container .header .search input {
+  width: 370rpx;
+  margin-left: 50rpx;
+  height: 60rpx;
+}
+.index-container .header .search input .placeholder {
+  font-size: 26rpx;
+}
+.index-container .header button {
+  width: 144rpx;
+  height: 60rpx;
+  font-size: 24rpx;
+  padding: 0 4rpx;
+  margin: 0 10rpx;
+}
+.index-container .nav-scroll {
+  display: flex;
+  white-space: nowrap;
+  height: 60rpx;
+}
+.index-container .nav-scroll .nav-item {
+  display: block;
+  width: 140rpx;
+  height: 50rpx;
+  margin: 0 20rpx;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 26rpx;
+}
+.index-container .nav-scroll .nav-item.active {
+  border-bottom: 5rpx solid #f40;
+}
+

@@ -1,0 +1,77 @@
+.container .swiper-item {
+  width: 100%;
+  height: 350rpx;
+}
+.container .swiper-item image {
+  width: 100%;
+  height: 350rpx;
+}
+.container .pllicy-list {
+  display: flex;
+  margin: 20rpx;
+}
+.container .pllicy-list .pllicy-item {
+  flex: 1;
+}
+.container .pllicy-list .pllicy-item image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.container .pllicy-list .pllicy-item text {
+  font-size: 24rpx;
+  margin-left: 10rpx;
+}
+.container .king-kong-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .king-kong-list .king-kong-item {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .king-kong-list .king-kong-item image {
+  width: 110rpx;
+  height: 110rpx;
+  margin-bottom: 10rpx;
+}
+.container .king-kong-list .king-kong-item text {
+  font-size: 26rpx;
+}
+.container .categray .categray-item .title-pic {
+  width: 100%;
+  height: 370rpx;
+  margin-top: 20rpx;
+}
+.container .categray .categray-item .category-scroll {
+  display: flex;
+  height: 300rpx;
+}
+.container .categray .categray-item .category-scroll .shop-item {
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+.container .categray .categray-item .category-scroll .shop-item .shop-img {
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #eaeaea;
+  border-radius: 10rpx;
+}
+.container .categray .categray-item .category-scroll .shop-item .shop-text {
+  font-size: 26rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.container .categray .categray-item .category-scroll .look-more {
+  white-space: nowrap;
+  height: 200rpx;
+  padding: 0 10rpx;
+  line-height: 200rpx;
+  color: #C0C0C0;
+  background-color: #eaeaea;
+}
+
