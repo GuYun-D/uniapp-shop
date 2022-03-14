@@ -68,7 +68,7 @@
 	}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 	.index-container {
 		.header {
 			display: flex;

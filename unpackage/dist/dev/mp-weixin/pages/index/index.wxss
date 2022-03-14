@@ -1,45 +1,45 @@
-.index-container .header {
+.index-container .header.data-v-57280228 {
   display: flex;
   padding: 10rpx 0;
 }
-.index-container .header .logo {
+.index-container .header .logo.data-v-57280228 {
   width: 140rpx;
   height: 40rpx;
   margin: 10rpx 20rpx;
 }
-.index-container .header .search {
+.index-container .header .search.data-v-57280228 {
   position: relative;
   width: 420rpx;
   height: 60rpx;
   background: #eee;
 }
-.index-container .header .search .iconfont {
+.index-container .header .search .iconfont.data-v-57280228 {
   position: absolute;
   font-size: 30rpx;
   top: 15rpx;
   left: 10rpx;
 }
-.index-container .header .search input {
+.index-container .header .search input.data-v-57280228 {
   width: 370rpx;
   margin-left: 50rpx;
   height: 60rpx;
 }
-.index-container .header .search input .placeholder {
+.index-container .header .search input .placeholder.data-v-57280228 {
   font-size: 26rpx;
 }
-.index-container .header button {
+.index-container .header button.data-v-57280228 {
   width: 144rpx;
   height: 60rpx;
   font-size: 24rpx;
   padding: 0 4rpx;
   margin: 0 10rpx;
 }
-.index-container .nav-scroll {
+.index-container .nav-scroll.data-v-57280228 {
   display: flex;
   white-space: nowrap;
   height: 60rpx;
 }
-.index-container .nav-scroll .nav-item {
+.index-container .nav-scroll .nav-item.data-v-57280228 {
   display: block;
   width: 140rpx;
   height: 50rpx;
@@ -48,7 +48,7 @@
   line-height: 50rpx;
   font-size: 26rpx;
 }
-.index-container .nav-scroll .nav-item.active {
+.index-container .nav-scroll .nav-item.active.data-v-57280228 {
   border-bottom: 5rpx solid #f40;
 }
 
