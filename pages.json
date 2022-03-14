@@ -5,6 +5,27 @@
 			"style": {
 				"navigationBarTitleText": "首页"
 			}
+		}, {
+			"path": "pages/cart/cart",
+			"style": {
+				"navigationBarTitleText": "购物车",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/category/category",
+			"style": {
+				"navigationBarTitleText": "商品分类",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/personal/personal",
+			"style": {
+				"navigationBarTitleText": "个人中心",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"globalStyle": { // 相当于是原生的window
@@ -20,5 +41,34 @@
 			"path": "", //启动页面，必选
 			"query": "" //启动参数，在页面的onLoad函数里面得到
 		}]
+	},
+	"tabBar": {
+		"color": "#555",
+		"selectedColor": "#D43C33",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "/static/images/tabBar/tab-home.png",
+				"selectedIconPath": "/static/images/tabBar/tab-home-current.png"
+			},
+			{
+				"pagePath": "pages/category/category",
+				"text": "分类",
+				"iconPath": "/static/images/tabBar/tab-cate.png",
+				"selectedIconPath": "/static/images/tabBar/tab-cate-current.png"
+			},
+			{
+				"pagePath": "pages/cart/cart",
+				"text": "购物车",
+				"iconPath": "/static/images/tabBar/tab-cart.png",
+				"selectedIconPath": "/static/images/tabBar/tab-cart-current.png"
+			},
+			{
+				"pagePath": "pages/personal/personal",
+				"text": "个人中心",
+				"iconPath": "/static/images/tabBar/tab-my.png",
+				"selectedIconPath": "/static/images/tabBar/tab-my-current.png"
+			}
+		]
 	}
 }
