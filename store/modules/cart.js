@@ -1,3 +1,5 @@
+import Vue from "vue"
+
 export default {
 	namespace: true,
 	state: {
@@ -155,11 +157,12 @@ export default {
 	mutations: {
 		addShopInfo(state, shopInfo) {
 			const item = state.cartList.find(item => item.id === shopInfo.id)
+
 			if (item) {
 				item.count++
 			} else {
-				shopInfo.isSelected = true
-				shopInfo.count = 1
+				Vue.set(shopInfo, "count", 1)
+				Vue.set(shopInfo, "isSelected", true)
 				state.cartList.push(shopInfo)
 			}
 		}
