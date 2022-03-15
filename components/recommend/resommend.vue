@@ -60,7 +60,7 @@
 		<view class="categray">
 			<view class="categray-item" v-for="categray in indexData.categoryModule" :key="categray.titlePicUrl">
 				<image :src="categray.titlePicUrl" class="title-pic" mode=""></image>
-				<scroll-view scroll-x class="shop-list" enable-flex="true" class="category-scroll">
+				<scroll-view scroll-x class="shop-list category-scroll" :enable-flex="true">
 					<view class="shop-item" v-for="shop in categray.itemList" :key="shop.id">
 						<image class="shop-img" :src="shop.showPicUrl" mode=""></image>
 						<text class="shop-text shop-item">{{shop.name}}</text>

@@ -12,8 +12,8 @@
 
 		<!-- 导航 -->
 		<scroll-view scroll-x="true" class="nav-scroll" enable-flex v-if="indexData.kingKongModule">
-			<view class="nav-item" @click="setNavIndex(-1)" :class="{active: navIndex === -1}">推荐</view>
-			<view class="nav-item" :class="{active: navIndex === index}" @click="setNavIndex(index)"
+			<view class="nav-item" @click="setNavIndex(-1, 0)" :class="{active: navIndex === -1}">推荐</view>
+			<view class="nav-item" :class="{active: navIndex === index}" @click="setNavIndex(index, item.L1Id)"
 				v-for="(item, index) in indexData.kingKongModule.kingKongList" :key="item.L1Id">
 				{{item.text}}
 			</view>
@@ -21,7 +21,8 @@
 
 		<!-- 内容区 -->
 		<scroll-view scroll-y>
-			<Recommend></Recommend>
+			<Recommend v-if="!!!navId"></Recommend>
+			<Cate-List :navId="navId" v-else></Cate-List>
 		</scroll-view>
 
 	</view>
@@ -33,13 +34,16 @@
 		mapState
 	} from "vuex"
 	import Recommend from '../../components/recommend/resommend.vue'
+	import CateList from "../../components/cateList/cate-list.vue"
 	export default {
 		components: {
-			Recommend
+			Recommend,
+			CateList
 		},
 		data() {
 			return {
-				navIndex: -1
+				navIndex: -1,
+				navId: 0
 			};
 		},
 
@@ -52,8 +56,9 @@
 				getIndexDataAction: 'getIndexDataAction'
 			}),
 
-			setNavIndex(navIndex) {
+			setNavIndex(navIndex, navId) {
 				this.navIndex = navIndex
+				this.navId = navId
 			}
 		},
 

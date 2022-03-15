@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "首页",
   "usingComponents": {
-    "recommend": "/components/recommend/resommend"
+    "recommend": "/components/recommend/resommend",
+    "cate-list": "/components/cateList/cate-list"
   }
 }

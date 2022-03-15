@@ -11,14 +11,16 @@
 		<view class="content-container">
 			<!-- 左侧 -->
 			<view class="left-container">
-				<scroll-view scroll-y="true" class="left-nav">
+				<scroll-view :scroll-y="true" class="left-nav">
 					<view @click="changeNavIndex(index)" v-for="(item, index) in categoryList" :key="item.id"
-						class="left-item {{index === navIndex ? 'active' : ''}}">{{item.name}}</view>
+						class="left-item" :class="{'active': index === navIndex }">
+						{{item.name}}
+					</view>
 				</scroll-view>
 			</view>
 			<!-- 右侧 -->
 			<view class="right-container">
-				<scroll-view scroll-y="true" class="right-vav">
+				<scroll-view :scroll-y="true" class="right-vav">
 					<view class="right-item">
 						<image class="cate-img" :src="cateObj.imgUrl" mode=""></image>
 						<view class="shop-item" v-for="item in cateObj.subCateList" :key="item.id">
