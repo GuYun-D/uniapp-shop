@@ -1,24 +1,26 @@
 <template>
 	<view class="cartContainer">
 		<view class="title">购物车</view>
-		<!-- 		<view class="header">
+		<view class="header">
 			<text>30天无忧退货</text>
 			<text>48小时快速退货</text>
 			<text>满99元免邮费</text>
 		</view>
 		<view class="contentContainer">
-			<image class="cartImg" src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noCart-d6193bd6e4.png?imageView&type=webp" mode=""></image>
+			<image class="cartImg"
+				src="http://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/noCart-d6193bd6e4.png?imageView&type=webp"
+				mode=""></image>
 			<button @click="toLogin">登录</button>
 			<view class="addMore">去添加点什么吧</view>
 		</view>
-		 -->
+
 		<!-- 购物车列表 -->
 		<view class="cartList">
-			<view class="cartItem" v-for="cartItem in cartList" :key="item.id">
-				<text class='iconfont icon-xuanzhong' :class="{'selected': cartItem.isSelected}"></text>
+			<view class="cartItem" v-for="(cartItem, index) in cartList" :key="cartItem.id">
+				<text @click="changeSelect(cartItem.isSelected, index)" class='iconfont icon-xuanzhong'
+					:class="{'selected': cartItem.isSelected}"></text>
 				<view class="shopItem">
-					<image class="shopImg" :src="cartItem.listPicUrl"
-						mode=""></image>
+					<image class="shopImg" :src="cartItem.listPicUrl" mode=""></image>
 					<view class="shopInfo">
 						<text>{{cartItem.name}}</text>
 						<text class="price">￥{{cartItem.retailPrice}}</text>
@@ -26,18 +28,19 @@
 				</view>
 				<!-- 控制数量 -->
 				<view class="countCtrl">
-					<text class="add"> + </text>
+					<text class="add" @click="changeCount(true, index)"> + </text>
 					<text class="count"> {{cartItem.count}} </text>
-					<text class="del"> - </text>
+					<text class="del" @click="changeCount(false, index)"> - </text>
 				</view>
 			</view>
 		</view>
 		<!-- 底部下单 -->
 		<view class="cartFooter">
-			<text class='iconfont icon-xuanzhong selected'></text>
-			<text class="allSelected">已选 1</text>
+			<text @click="changeAllStatus(!allSelected)" class='iconfont icon-xuanzhong'
+				:class="{'selected': allSelected}"></text>
+			<text class="allSelected">已选 {{totalCount}}</text>
 			<view class="right">
-				<text class="totalPrice">合计: ￥111</text>
+				<text class="totalPrice">合计: ￥{{totalPrice}}</text>
 				<text class="preOrder">下单</text>
 			</view>
 		</view>
@@ -50,7 +53,9 @@
 
 <script>
 	import {
-		mapState
+		mapState,
+		mapMutations,
+		mapGetters
 	} from 'vuex'
 	export default {
 		data() {
@@ -62,7 +67,35 @@
 		computed: {
 			...mapState({
 				cartList: (state) => state.cart.cartList
-			})
+			}),
+
+			...mapGetters(["allSelected", "totalCount", "totalPrice"])
+		},
+
+		methods: {
+			...mapMutations({
+				changeGoodCount: "changeGoodCount",
+				changeShopSelectStatus: "changeShopSelectStatus",
+				chnageAllSelectedStatus: "chnageAllSelectedStatus"
+			}),
+
+			changeCount(isAdd, index) {
+				this.changeGoodCount({
+					isAdd,
+					index
+				})
+			},
+
+			changeSelect(currentStatus, currentShopCartIndex) {
+				this.changeShopSelectStatus({
+					currentStatus,
+					currentShopCartIndex
+				})
+			},
+
+			changeAllStatus(allStatus) {
+				this.chnageAllSelectedStatus(allStatus)
+			}
 		}
 	}
 </script>
