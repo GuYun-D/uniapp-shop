@@ -14,7 +14,7 @@
 
 		<!-- 内容列表 -->
 		<view class="shop-list">
-			<view class="shop-item" v-for="(shopItem, index) in cateObj.itemList" :key="shopItem.id">
+			<view @click="toDetail(shopItem)" class="shop-item" v-for="(shopItem, index) in cateObj.itemList" :key="shopItem.id">
 				<image class="shop-list-img" :src="shopItem.listPicUrl" mode=""></image>
 				<view class="desc">{{shopItem.name}}</view>
 				<view class="price">{{shopItem.retailPrice}}</view>
@@ -43,6 +43,13 @@
 		methods: {
 			async getCateList() {
 				this.cateListArr = await GyRequest('getIndexCateList')
+			},
+			
+			toDetail(shopDetailInfo){
+				
+				wx.navigateTo({
+					url: "/pages/detail/detail?info" + JSON.stringify(shopDetailInfo)
+				})
 			}
 		},
 

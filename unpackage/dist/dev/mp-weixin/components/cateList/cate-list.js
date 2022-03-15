@@ -159,6 +159,13 @@ var _request = _interopRequireDefault(__webpack_require__(/*! ../../utils/reques
   methods: {
     getCateList: function getCateList() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
                   (0, _request.default)('getIndexCateList'));case 2:_this.cateListArr = _context.sent;case 3:case "end":return _context.stop();}}}, _callee);}))();
+    },
+
+    toDetail: function toDetail(shopDetailInfo) {
+
+      wx.navigateTo({
+        url: "/pages/detail/detail?info" + JSON.stringify(shopDetailInfo) });
+
     } },
 
 

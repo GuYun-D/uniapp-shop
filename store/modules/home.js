@@ -16,7 +16,6 @@ export default {
 		async getIndexDataAction({
 			commit
 		}) {
-			console.log(1);
 			const indexData = await GyRequest('getIndexData')
 			commit("changeIndexData", indexData)
 		}
