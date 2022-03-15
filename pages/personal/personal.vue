@@ -44,6 +44,7 @@
 </template>
 
 <script>
+	import GyRequest from "../../utils/request.js"
 	module.exports = {
 		data() {
 			return {
@@ -100,6 +101,21 @@
 			}
 
 			this.userInfo = userInfo
+
+			// 获取用户的唯一ID，openId
+			wx.login({
+				success: async (res) => {
+					let {
+						code
+					} = res
+					// 将code发送给服务器端
+					let token = await GyRequest("getOpenId", {
+						code
+					})
+
+					wx.setStorageSync("token", token)
+				}
+			})
 		},
 		methods: {
 			toLogin() {
