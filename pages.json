@@ -29,7 +29,16 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": { // 相当于是原生的window
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "网易严选",
